@@ -7,29 +7,25 @@
 
 int main()
 {
-    int n;
-    int max;
-    char arr[100] = {'\0'};
+    int n = 0;
+    int min = 100;
+    char str[100] = {'\0'};
     char result[100] = {'\0'};
 
     scanf("%d", &n);
     getchar();
 
-    fgets(arr, sizeof(arr), stdin);
-    arr[strlen(arr) - 1] = '\0';
-    max = strlen(arr);
-
-    for (int i = 0; i < n - 1; i++)
+    for (int i = 0; i < n; i++)
     {
-        fgets(arr, sizeof(arr), stdin);
-        arr[strlen(arr) - 1] = '\0';
+        fgets(str, sizeof(str), stdin);
+        str[strlen(str) - 1] = '\0';
 
-        if (strlen(arr) < max)
+        if (strlen(str) < min)
         {
-            max = strlen(arr);
-            strcpy(result, arr);
+            min = strlen(str);
+            strcpy(result, str);
         }
-    }    
+    }
     printf("%s", result);
 
     return 0;
