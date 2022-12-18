@@ -18,9 +18,11 @@ int main()
     scanf("%s", str2);
     scanf("%d", &index);
 
-    for (int i = strlen(str1); i >= index; i--) str1[i + strlen(str2)] = str1[i];
-    for (int i = index, j = 0; i < index + strlen(str2); i++, j++) str1[i] = str2[j];
-
+    for (int i = strlen(str1), j = strlen(str2); i >= index; i--, j--) 
+    {
+        str1[i + strlen(str2)] = str1[i];
+        str1[i] = str2[j];
+    }
     printf("%s", str1);
 
     return 0;
